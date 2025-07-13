@@ -1,6 +1,6 @@
 
 
-const Header = () => {
+const Header = ({coins}) => {
     return (
         <div className="navbar justify-between">
             <div>
@@ -33,7 +33,7 @@ const Header = () => {
                     <li><a href="">Teams</a></li>
                     <li><a href="">Schedules</a></li>
                     <button className="btn border-2 flex space-x-2.5 font-bold">
-                        <span>0 Coin</span>
+                        <span>{coins} Coin</span>
                         <img width="20" height="20" src="https://img.icons8.com/color/48/cheap-2--v1.png" alt="cheap-2--v1" />
                     </button>
                 </ul>
