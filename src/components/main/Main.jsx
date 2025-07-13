@@ -24,7 +24,11 @@ const Main = ({coins, handleRemoveCoin}) => {
         else{
             alert('Done');
         }
+    }
 
+    const handleRemovePlayer = (player) => {
+        const updatePlayers = selectedPlayers.filter(selectedPlayer => selectedPlayer.playerId !== player.playerId)
+        setSelectedPlayers(updatePlayers);
     }
 
 
@@ -41,7 +45,7 @@ const Main = ({coins, handleRemoveCoin}) => {
             <div className="mt-8">
                 {isAvailable
                     ? <Players handleSelectedPlayers={handleSelectedPlayers} />
-                    : <SelectedPlayers selectedPlayers={selectedPlayers} handleAvailable={handleAvailable} />}
+                    : <SelectedPlayers selectedPlayers={selectedPlayers} handleAvailable={handleAvailable} handleRemovePlayer={handleRemovePlayer} />}
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 
 
-const SelectedPlayer = ({selectedPlayer}) => {
+const SelectedPlayer = ({selectedPlayer, handleRemovePlayer}) => {
     const {name, battingStyle} = selectedPlayer;
     return (
         <div className="flex justify-between items-center border-2 border-gray-200 p-6 rounded-xl mb-6">
@@ -11,7 +11,7 @@ const SelectedPlayer = ({selectedPlayer}) => {
                     <p className="text-base text-gray-500 pt-3">{battingStyle}</p>
                 </div>
             </div>
-            <a href=""><img width="50" height="50" src="https://img.icons8.com/plasticine/100/filled-trash.png" alt="filled-trash"/></a>
+            <a onClick={()=>handleRemovePlayer(selectedPlayer)}><img width="50" height="50" src="https://img.icons8.com/plasticine/100/filled-trash.png" alt="filled-trash"/></a>
         </div>
     );
 };
