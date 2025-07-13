@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className='mx-32 mt-12'>
+      <div className='lg:mx-32 mt-12'>
         <Header/>
       </div>
     </>
