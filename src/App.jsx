@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css'
 import Banner from './components/banner/Banner'
 import Header from './components/header/Header'
+import Main from './components/main/Main';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <div className='lg:mx-32 mt-12'>
         <Header coins={coins}/>
         <Banner handleAddCoin={handleAddCoin} />
+        <Main/>
       </div>
     </>
   )
