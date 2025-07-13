@@ -11,13 +11,17 @@ function App() {
     const UpdateCoins = coins + newCoins;
     setCoins(UpdateCoins);
   }
+  const handleRemoveCoin = (newCoins) => {
+    const UpdateCoins = coins - newCoins;
+    setCoins(UpdateCoins);
+  }
 
   return (
     <>
       <div className='lg:mx-32 mt-12'>
         <Header coins={coins}/>
         <Banner handleAddCoin={handleAddCoin} />
-        <Main/>
+        <Main coins={coins} handleRemoveCoin={handleRemoveCoin}/>
       </div>
     </>
   )

@@ -1,10 +1,10 @@
 
 
 const Player = ({ player, handleSelectedPlayers }) => {
-    const { id, name, imgae, country, role, battingStyle, bowlingStyle, biddingPrice } = player;
+    const {name, image, country, role, battingStyle, bowlingStyle, biddingPrice } = player;
     return (
         <div className="border-2 border-gray-200 p-6 rounded-lg">
-            <img className="rounded-lg w-full" src="/public/assets/Shakib-Al-Hasan.jpg" alt="" />
+            <img className="rounded-lg w-full" src={image} alt="" />
             <div className="flex items-center mt-6 space-x-4">
                 <img width="30" height="30" src="https://img.icons8.com/puffy-filled/32/user.png" alt="user" />
                 <h3 className="font-semibold text-xl">{name}</h3>
@@ -24,7 +24,7 @@ const Player = ({ player, handleSelectedPlayers }) => {
             </div>
             <div className="flex justify-between items-center mt-3">
                 <h4 className="font-semibold text-base">Price: ${biddingPrice}</h4>
-                <button onClick={handleSelectedPlayers} className="btn text-sm">Choose Player</button>
+                <button onClick={() => handleSelectedPlayers(player)} className="btn text-sm">Choose Player</button>
             </div>
         </div>
     );
