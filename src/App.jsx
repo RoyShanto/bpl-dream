@@ -3,6 +3,7 @@ import './App.css'
 import Banner from './components/banner/Banner'
 import Header from './components/header/Header'
 import Main from './components/main/Main';
+import Footer from './components/footer/Footer';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Banner handleAddCoin={handleAddCoin} />
         <Main coins={coins} handleRemoveCoin={handleRemoveCoin}/>
       </div>
+      <Footer/>
     </>
   )
 }
