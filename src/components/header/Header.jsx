@@ -14,7 +14,7 @@ const Header = ({coins}) => {
                         <li><a href="">Teams</a></li>
                         <li><a href="">Schedules</a></li>
                         <button className="btn font-bold">
-                            <span>0 Coin</span>
+                            <span>{coins} Coin</span>
                             <img width="20" height="20" src="https://img.icons8.com/color/48/cheap-2--v1.png" alt="cheap-2--v1" />
                         </button>
                     </ul>
@@ -24,7 +24,7 @@ const Header = ({coins}) => {
                 </a>
             </div>
             <a className="md:hidden" href="">
-                <img className="navbar-end md:hidden h-20 w-20" src="/public/assets/logo.png" alt="" />
+                <img className="navbar-end md:hidden h-15 w-15" src="/public/assets/logo.png" alt="" />
             </a>
             <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 space-x-12">

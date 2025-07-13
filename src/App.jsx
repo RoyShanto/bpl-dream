@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <div className='lg:mx-32 mt-12'>
+      <div className='lg:mx-32 md:mt-12'>
         <Header coins={coins}/>
         <Banner handleAddCoin={handleAddCoin} />
         <Main coins={coins} handleRemoveCoin={handleRemoveCoin}/>
