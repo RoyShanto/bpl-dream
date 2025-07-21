@@ -1,7 +1,10 @@
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Player = ({ player, handleSelectedPlayers }) => {
-    const {name, image, country, role, battingStyle, bowlingStyle, biddingPrice } = player;
+    const { name, image, country, role, battingStyle, bowlingStyle, biddingPrice } = player;
+    const notify = () => toast("New Player Added!");
+
     return (
         <div className="border-2 border-gray-200 p-6 rounded-lg">
             <img className="rounded-lg w-full" src={image} alt="" />
@@ -24,7 +27,10 @@ const Player = ({ player, handleSelectedPlayers }) => {
             </div>
             <div className="flex justify-between items-center mt-3">
                 <h4 className="font-semibold text-base">Price: ${biddingPrice}</h4>
-                <button onClick={() => handleSelectedPlayers(player)} className="btn text-sm">Choose Player</button>
+                <button onClick={() => {
+                    handleSelectedPlayers(player)
+                    notify()
+                }} className="btn text-sm">Choose Player</button>
             </div>
         </div>
     );
