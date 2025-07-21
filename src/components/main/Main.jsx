@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import Players from '../players/Players';
 import SelectedPlayers from '../selectedPlayers/SelectedPlayers';
+import { toast } from 'react-toastify';
 
-const Main = ({coins, handleRemoveCoin}) => {
+const Main = ({ coins, handleRemoveCoin }) => {
     const [isAvailable, setIsAvailable] = useState(true);
     const [isSelected, setIsSelected] = useState(false);
     const [selectedPlayers, setSelectedPlayers] = useState([]);
+    const addPlayer = () => toast("New Player Added!");
+    const warnCoin = () => toast("Insufficient Coin ");
+    const warnPlayers = () => toast("Players limit Full");
 
     const handleAvailable = () => {
         setIsAvailable(true);
@@ -16,13 +20,19 @@ const Main = ({coins, handleRemoveCoin}) => {
         setIsSelected(true);
     }
     const handleSelectedPlayers = (player) => {
-        if (selectedPlayers.length < 6 && player.biddingPrice <= coins) {
-            const newSelected = [...selectedPlayers, player];
-            setSelectedPlayers(newSelected);
-            handleRemoveCoin(player.biddingPrice);
+        if (player.biddingPrice <= coins) {
+            if (selectedPlayers.length < 6) {
+                const newSelected = [...selectedPlayers, player];
+                setSelectedPlayers(newSelected);
+                handleRemoveCoin(player.biddingPrice);
+                addPlayer();
+            }
+            else {
+                warnPlayers();
+            }
         }
-        else{
-            alert('Done');
+        else {
+            warnCoin();
         }
     }
 
