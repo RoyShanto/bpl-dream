@@ -3,7 +3,7 @@ import Players from '../players/Players';
 import SelectedPlayers from '../selectedPlayers/SelectedPlayers';
 import { toast } from 'react-toastify';
 
-const Main = ({ coins, handleRemoveCoin }) => {
+const MainSection = ({ coins, handleRemoveCoin }) => {
     const [isAvailable, setIsAvailable] = useState(true);
     const [isSelected, setIsSelected] = useState(false);
     const [selectedPlayers, setSelectedPlayers] = useState([]);
@@ -62,4 +62,4 @@ const Main = ({ coins, handleRemoveCoin }) => {
     );
 };
 
-export default Main;
+export default MainSection;
